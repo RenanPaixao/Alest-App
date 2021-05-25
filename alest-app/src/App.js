@@ -1,10 +1,15 @@
+import { Fragment } from 'react';
+import GlobalStyle from './Assets/globalStyle.js';
+import Navbar from './Components/Navbar/index.js';
+
 function App() {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<h1>Hello</h1>
-			</header>
-		</div>
+		<Fragment>
+			<GlobalStyle />
+			<div className="App">
+				<Navbar />
+			</div>
+		</Fragment>
 	);
 }
 

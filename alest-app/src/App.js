@@ -7,17 +7,15 @@ import Container from './Components/Card/containerCards';
 function App() {
 	const [cardState, setCardState] = useState(true);
 	const cards = [];
-	cards.push({ nickname: 'NodeJS', price: 200, cents: 50 });
-	// function addCard() {
-	// 	let nickname = 'nickname';
-	// 	let price = 'price';
-	// 	let cents = 'cents';
-	// 	cards.push({ nickname: nickname, price: price, cents: cents });
-	// 	// setCardState(!cardState);
-	// }
-
+	cards.push({ nickname: 'NodeJS', image: 'https://reactjs.org/logo-og.png', price: 200, cents: 50 });
+	function addCard(nickname, image, price, cents) {
+		cards.push({ nickname: nickname, price: price, image: image, cents: cents });
+	}
+	addCard(123, 123, 123);
 	function putInContainer() {
-		return cards.map((card) => <Card nickname={card.nickname} price={card.price} cents={card.cents} />);
+		return cards.map((card) => (
+			<Card nickname={card.nickname} image={cards.image} price={card.price} cents={card.cents} />
+		));
 	}
 	return (
 		<Fragment>

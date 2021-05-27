@@ -29,9 +29,9 @@ export const CardStyled = styled.div`
 	}
 
 	h2 {
+		width: 100%;
 		font-size: 1.6rem;
-
-		margin: 1rem 0 0 1rem;
+		padding: 1rem 0 0 1rem;
 	}
 	p {
 		align-self: center;

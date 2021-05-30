@@ -89,3 +89,95 @@ também retorna uma promisse que se usado snapshot.val() contém o objeto inteir
 **.ref... .then(function, catch( (err) =>))** ou como parametro
 
 **-------------------------------------------------Fim do RTDB--------------------------------------------------------------**
+
+## Firestore
+
+### Básicos
+
+**firebase.firestore() -** acessa o firestore
+**firebase.firestore().collection('valor') -** acessa a colection do valor
+**firebase.firestore().collection('valor').doc('valor') -** acessa a colection do valor e o card
+
+### Adicionar
+
+**.doc('nome').set(dado) -** coloca o dado em um nó do documento com o nome como id, ou seja, você escolhe
+**.collection('nome).add(dado) -** adiciona o dado, mas com um id aleatório e único
+
+### Ler
+
+**.collection('nome').get()-** pega toda a coleção, mas ainda não apenas os docs (um promisse)
+
+**.collection('nome').get().then(snapshot =>{**
+
+-------- **snapshot.empty** ----------------------------> aqui, um boolean pra indicar se o snapshot está vazio
+
+-------- **snapshot.query** ----------------------------> aqui, tudo que foi feito nesse get
+
+-------- **snapshot.size** ----------------------------> retorna o número de docs nessa coleção
+
+-------- **snapshot.docChanges** ----------------------------> retorna um array com tudo que foi feito desde a última leitura
+
+-------- **snapshot.docs** ----------------------------> aqui, seriam todos os cards, podendo fazer um forEach
+
+snapshot.docs().forEach('nome'){
+
+---------**nome.data() -** ----------------------> retorna dos dados do doc
+
+--------- **nome.id( ) -** ----------------------> retorna o id do doc
+
+---------**nome.isEqual(doc) -** ----------------------> retorna um booleano pra comparar se um doc na nuvem é igual ao passado e serve para coleções também
+
+**}**
+
+**})**
+
+**}**
+
+### Ler em tempo real
+
+**.collection(nome).onSnapshot(snapshot){ -** adiciona um ouvinte a coleção
+
+    snapshot.docChanges().forEach( card =>{
+
+        if(card.type == 'added'){
+
+         -   **card.doc.data()** ---------------> forma de acessar doc dentro do onSnapshot
+        }
+        if
+    })
+
+}
+
+### Atualizar
+
+**firebase.firestore().collection('nome').doc(id).update(objeto) -** atualiza todos os dados com o objeto passado e só funciona com docs. Não cria um novo
+
+### Apagar
+
+**firebase.firestore().collection('nome').doc(id).delete() -** Apaga um documento inteiro
+
+**firebase.firestore().collection('nome').doc(id).update({nomeDoNó: firebase.firestore.FieldValue.delete()}) -** Apaga uma propriedade específica do documento (Observar que o firestore aqui é uma propriedade, dentro do update)
+
+### Buscas simples e compostas
+
+**firebase.firestore().collection('nome').where('Propriedade', >, numero) -** retorna dados que obecerem essa condição (se a propriedade fosse idade, retornaria os maiores que o número)
+
+**firebase.firestore().collection('nome').where('Propriedade', >, numero1).where('Propriedade',<, numero2) -** pode ser encadeada com outro where e agora seria a propriedade com valor maior que o numero 1 e menor que o numero 2
+
+### Ordenar
+
+**firebase.firestore().collection('nome').orderBy('propriedade', 'desc').get().then() -** ordena de forma decrescente
+**firebase.firestore().collection('nome').where('Propriedade', >, numero).orderBy('propriedade', 'desc') -** busca todas as propriedades e depois ordena em forma decrescente. As duas propriedades tem que ser as mesmas
+
+### Limitar dados
+
+**firebase.firestore().collection('nome').limit(numero).get().then() -** limita o número de objetos pelo número passado
+
+### Filtrar
+
+**.startAt(valor) -** começa a filtrar no valor passado
+**.startAfter(valor) -** funciona como o operador >
+**.endBefore(valor) -** funciona como <
+**.endAt(valor) -** funciona como o operador <=
+
+**O legal é que eles aceitam documentos .endAt(doc)**

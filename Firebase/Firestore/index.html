@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App-Firebase-Firestore</title>
+</head>
+<body id='setTime' style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+">
+    <h1>Card</h1>
+    <input type="text" id='inputNome'>
+    <input style='margin: 1rem 0;' type="text"  id='inputPrice'>
+    <input type="button" value="Cria" >
+    <input style='margin: 1rem 0;' type="button" value="Remove" >
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase.js"></script>    
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBD3UTu9XS54rmj_-qe2IdZUHM_TIPmU-o",
+            authDomain: "app-alest.firebaseapp.com",
+            projectId: "app-alest",
+            storageBucket: "app-alest.appspot.com",
+            messagingSenderId: "568833794824",
+            appId: "1:568833794824:web:87912225218a7b744b82bd"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="./script.js"></script>
+</body>
+</html>

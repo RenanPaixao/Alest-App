@@ -1,8 +1,16 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+import { createGlobalStyle } from 'styled-components';
 
+const GlobalStyles = createGlobalStyle`
+    :root{
+        --gray: #EEEEEE;
+        --white: #FFFFFF;
+
+    }
+    *{
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+    }
+    
 html,
 body,
 div,
@@ -88,7 +96,6 @@ video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -127,3 +134,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* html{
+    width: 100vw;
+    height: 100vw;
+} */
+`;
+
+export default GlobalStyles;

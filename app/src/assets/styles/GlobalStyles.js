@@ -4,6 +4,7 @@ const GlobalStyles = createGlobalStyle`
     :root{
         --gray: #EEEEEE;
         --white: #FFFFFF;
+        --gray-hover: #ced4da;
 
     }
     *{

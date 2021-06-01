@@ -24,3 +24,24 @@ export async function addProduct(title, price, urlImage) {
 		console.log(err);
 	}
 }
+
+export async function productSearch(title) {
+	const snapshot = await ref.get();
+	if (snapshot.empty === true) {
+		return false;
+	} else {
+		const products = [];
+		snapshot.docs.forEach((snap) => {
+			const verify = snap.data();
+
+			if (verify.title.includes(title)) {
+				products.push(snap.data());
+			}
+		});
+		if (products.length) {
+			return products;
+		} else {
+			return 'produto não encontrado';
+		}
+	}
+}

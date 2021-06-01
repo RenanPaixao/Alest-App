@@ -1,5 +1,5 @@
 import express from 'express';
-import { productsList, addProduct } from '../../services/products/productsServices.js';
+import { productsList, addProduct, productSearch } from '../../services/products/productsServices.js';
 
 const productsRoutes = express.Router();
 
@@ -16,6 +16,10 @@ productsRoutes.post('/add', (req, res) => {
 	addProduct(body.id.title, body.id.price, body.id.urlImage);
 
 	res.send('Success');
+});
+
+productsRoutes.get('/products/:id', async (req, res) => {
+	res.send(await productSearch(req.params.id));
 });
 
 export default productsRoutes;

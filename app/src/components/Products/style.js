@@ -13,6 +13,10 @@ export const Card = styled.div`
 	background-color: var(--gray);
 	border-radius: 5px;
 
+	input {
+		background-color: #000;
+		width: 5rem;
+	}
 	img {
 		width: 70%;
 		height: 40%;

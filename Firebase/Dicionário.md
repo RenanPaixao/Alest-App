@@ -123,7 +123,7 @@ também retorna uma promisse que se usado snapshot.val() contém o objeto inteir
 
 snapshot.docs().forEach('nome'){
 
----------**nome.data() -** ----------------------> retorna dos dados do doc
+---------**nome.data() -** ----------------------> retorno dos dados do doc
 
 --------- **nome.id( ) -** ----------------------> retorna o id do doc
 

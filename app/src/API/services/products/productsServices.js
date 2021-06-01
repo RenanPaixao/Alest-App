@@ -15,3 +15,12 @@ export async function productsList() {
 		return products;
 	}
 }
+
+export async function addProduct(title, price, urlImage) {
+	try {
+		let send = { title: title, price: price, urlImage: urlImage };
+		await ref.add(send);
+	} catch (err) {
+		console.log(err);
+	}
+}

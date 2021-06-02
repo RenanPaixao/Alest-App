@@ -55,3 +55,24 @@ export async function productUpdate(id, title, price, image) {
 	}
 	return erro;
 }
+
+export async function productDelete(id) {
+	const snapshot = await ref.get();
+	let verify = false;
+
+	try {
+		if (snapshot.empty === true) {
+			throw new Error('empty stock');
+		} else {
+			snapshot.docs.forEach((snap) => {
+				if (snap.id == id) {
+					ref.doc(id).delete();
+					verify = true;
+				}
+			});
+		}
+	} catch (e) {
+		return e.message;
+	}
+	return verify;
+}

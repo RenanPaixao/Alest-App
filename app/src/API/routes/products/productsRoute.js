@@ -1,5 +1,11 @@
 import express from 'express';
-import { productsList, addProduct, productSearch, productUpdate } from '../../services/products/productsServices.js';
+import {
+	productsList,
+	addProduct,
+	productSearch,
+	productUpdate,
+	productDelete,
+} from '../../services/products/productsServices.js';
 
 const productsRoutes = express.Router();
 
@@ -39,4 +45,13 @@ productsRoutes.post('/products/update/:id', async (req, res) => {
 	}
 });
 
+productsRoutes.delete('/delete/:id', async (req, res) => {
+	const verify = await productDelete(req.params.id);
+	if (verify === true) {
+		return res.status(200).send('sucess');
+	} else if (verify === false) {
+		return res.status(400).send('Product not Found');
+	}
+	return res.status(400).send(verify);
+});
 export default productsRoutes;

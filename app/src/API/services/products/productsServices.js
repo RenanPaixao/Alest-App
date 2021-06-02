@@ -45,3 +45,13 @@ export async function productSearch(title) {
 		}
 	}
 }
+
+export async function productUpdate(id, title, price, image) {
+	let erro = true;
+	try {
+		await ref.doc(id).update({ title: title, price: price, image: image });
+	} catch (err) {
+		erro = false;
+	}
+	return erro;
+}

@@ -19,7 +19,7 @@ productsRoutes.post('/add', (req, res) => {
 		return res.status(400).end();
 	}
 
-	addProduct(body.id.title, body.id.price, body.id.urlImage);
+	addProduct(body.id.title, body.id.price, body.id.image);
 
 	res.send('Success');
 });

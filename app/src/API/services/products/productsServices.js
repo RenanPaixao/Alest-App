@@ -16,9 +16,9 @@ export async function productsList() {
 	}
 }
 
-export async function addProduct(title, price, urlImage) {
+export async function addProduct(title, price, image) {
 	try {
-		let send = { title: title, price: price, urlImage: urlImage };
+		let send = { title: title, price: price, image: image };
 		await ref.add(send);
 	} catch (err) {
 		console.log(err);

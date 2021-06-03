@@ -9,6 +9,7 @@ const WrapperCards = styled.div`
 	margin: 2rem auto;
 
 	background-color: var(--white);
+	border-radius: 8px;
 
 	h1 {
 		margin: 40vh auto;

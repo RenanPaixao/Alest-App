@@ -8,7 +8,10 @@ function Card(props) {
 			<img src={props.image} alt={`Imagem sobre ${props.title}`} />
 			<div>
 				<p>{props.title}</p>
-				<p>{props.price}</p>
+
+				<p>
+					<span>R$ {props.price}</span>
+				</p>
 			</div>
 		</CardStyle>
 	);

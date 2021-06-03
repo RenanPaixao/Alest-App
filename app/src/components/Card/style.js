@@ -10,8 +10,9 @@ const CardStyle = styled.div`
 	justify-content: center;
 	margin: 2rem 1rem 1rem;
 
-	background-color: var(--gray);
-	border-radius: 5px;
+	background: rgb(142, 45, 226);
+	background: linear-gradient(180deg, rgba(142, 45, 226, 0.4292892156862745) 5%, rgba(74, 0, 224, 1) 100%);
+	border-radius: 8px;
 
 	input {
 		background-color: #000;
@@ -19,7 +20,9 @@ const CardStyle = styled.div`
 	}
 	img {
 		width: 70%;
-		height: 40%;
+		height: 50%;
+
+		border-radius: 50%;
 	}
 	div {
 		width: 100%;
@@ -29,10 +32,21 @@ const CardStyle = styled.div`
 		justify-content: space-around;
 		margin-top: 3rem;
 	}
+
+	span {
+		height: 50%;
+		font-weight: bold;
+		font-size: 1.3rem;
+		color: #fff;
+	}
+	p {
+		color: var(--white);
+		text-transform: capitalize;
+		font-size: 1.2rem;
+		text-overflow: clip;
+	}
 	:hover {
 		transform: scale(1.1);
-		cursor: pointer;
-		background-color: var(--gray-hover);
 	}
 	@media (max-width: 675px) {
 		width: 11rem;

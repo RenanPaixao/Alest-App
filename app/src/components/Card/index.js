@@ -1,6 +1,7 @@
 import React from 'react';
 import CardStyle from './style.js';
-import Teste from '../../assets/images/teste.jpg';
+import Update from '../../assets/images/update.svg';
+import Delete from '../../assets/images/trash.svg';
 
 function Card(props) {
 	return (
@@ -13,6 +14,14 @@ function Card(props) {
 					<span>R$ {props.price}</span>
 				</p>
 			</div>
+			<footer>
+				<div>
+					<img src={Update} />
+				</div>
+				<div>
+					<img src={Delete} />
+				</div>
+			</footer>
 		</CardStyle>
 	);
 }

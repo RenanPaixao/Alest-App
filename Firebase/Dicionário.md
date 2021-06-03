@@ -125,7 +125,7 @@ snapshot.docs().forEach('nome'){
 
 ---------**nome.data() -** ----------------------> retorno dos dados do doc
 
---------- **nome.id( ) -** ----------------------> retorna o id do doc
+--------- **nome.id -** ----------------------> retorna o id do doc
 
 ---------**nome.isEqual(doc) -** ----------------------> retorna um booleano pra comparar se um doc na nuvem é igual ao passado e serve para coleções também
 

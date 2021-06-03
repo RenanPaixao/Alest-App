@@ -10,7 +10,7 @@ export async function productsList() {
 	} else {
 		const products = [];
 		snapshot.docs.forEach((snap) => {
-			products.push(snap.data());
+			products.push(Object.assign({ id: snap.id }, snap.data()));
 		});
 		return products;
 	}

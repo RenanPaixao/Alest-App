@@ -24,7 +24,7 @@ function Products() {
 				<h1>Não temos produtos ou você não está conectado a internet</h1>
 			) : (
 				cards.map((props) => {
-					return <Card key={props.image.charCodeAt(0)} title={props.title} price={props.price} />;
+					return <Card id={props.id} key={props.id.charCodeAt(0)} title={props.title} price={props.price} />;
 				})
 			)}
 		</WrapperCards>

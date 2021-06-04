@@ -16,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
 		width: 100%;
 		height: 100%;
 		background: var(--purple);
-		background: var(--gradient)
+		background: var(--gradient);
 	}
 html,
 body,

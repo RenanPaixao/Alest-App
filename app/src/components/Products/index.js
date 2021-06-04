@@ -1,14 +1,14 @@
-import { React, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import WrapperCards from './style';
 import Card from '../Card/index.js';
 import axios from 'axios';
 
 function Products() {
 	const [cards, setCards] = useState([]);
-
 	useEffect(() => {
 		let isMounted = true;
-		axios.get('http://localhost:404/products').then((res) => {
+		// put the port that you using here
+		axios.get(`http://localhost:404/products`).then((res) => {
 			if (isMounted) {
 				setCards(res.data);
 			}
@@ -27,7 +27,7 @@ function Products() {
 					return (
 						<Card
 							id={props.id}
-							key={props.id.charCodeAt(0)}
+							key={props.id}
 							title={props.title}
 							price={props.price}
 							image={props.image}
@@ -40,20 +40,3 @@ function Products() {
 }
 
 export default Products;
-
-// <Card>
-// 		<img src={Teste} />
-// 	<div>
-// 		<p>{card?.title}</p>
-//		<p>{card.price}</p>
-// 	</div>
-//</Card>
-// cards.map((card) => {
-// 	<Card>
-// 		<img src={Teste} />
-// 		<div>
-// 			<p>{card?.title}</p>
-// 			<p>{card.price}</p>
-// 		</div>
-// 	</Card>;
-// })

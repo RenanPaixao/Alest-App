@@ -33,7 +33,7 @@ productsRoutes.post('/products/update/:id', async (req, res) => {
 
 	try {
 		if (req.body) {
-			const verify = await productUpdate(req.params.id, body?.id.title, body.id.price, body.id.image);
+			const verify = await productUpdate(req.params.id, body?.title, body?.price, body?.image);
 			if (verify === true) {
 				return res.status(200).send('Sucess');
 			} else {

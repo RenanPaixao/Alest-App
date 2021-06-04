@@ -6,7 +6,7 @@ const GlobalStyles = createGlobalStyle`
         --white: #FFFFFF;
         --gray-hover: #ced4da;
 		--purple: rgb(142,45,226);
-		--gradient: linear-gradient(130deg, rgba(142,45,226,1) 5%, rgba(74,0,224,1) 100%);
+		--gradient: linear-gradient(130deg, rgba(142,45,226,1) 5%, rgba(74,0,224,1) 100%) fixed;
     }
     *{
         font-family: 'Poppins', sans-serif;

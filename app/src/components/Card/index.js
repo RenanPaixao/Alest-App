@@ -6,7 +6,8 @@ import Delete from '../../assets/images/trash.svg';
 import axios from 'axios';
 
 function Card(props) {
-	const [state, setstate] = useState(props); //melhor criar outro state e passar a prop pra ele
+	const [state, setState] = useState(props);
+	const [openModal, setOpenModal] = useState(null);
 
 	return (
 		<>
@@ -20,7 +21,7 @@ function Card(props) {
 					</p>
 				</div>
 				<footer>
-					<div onClick={props.onClickUpdate}>
+					<div onClick={() => setOpenModal(!openModal)}>
 						<img src={Update} alt="Button update" />
 					</div>
 					<div
@@ -34,13 +35,30 @@ function Card(props) {
 								imagem: state.price,
 							});
 
-							setstate(false);
+							setState(false);
 						}}
 					>
 						<img src={Delete} alt="Button delete" />
 					</div>
 				</footer>
 			</CardStyle>
+			{Boolean(openModal) && (
+				<Modal
+					isOpen={Boolean(openModal)}
+					closeModal={() => setOpenModal(null)}
+					propState={state}
+					propSetState={(value) => setState(value)}
+				>
+					<h1>Atualizar</h1>
+					<label htmlFor="inputTitle">Título</label>
+					<input id="inputTitle" type="text" name="inputTitle" placeholder="Título"></input>
+					<label htmlFor="inputPrice">Preço</label>
+					<input id="inputPrice" type="number" name="inputPrice" placeholder="Preço"></input>
+					<label htmlFor="inputImage">Url da Imagem</label>
+					<input id="inputImage" type="text" name="inputImage" placeholder="Url da Imagem"></input>
+					<p>**Nem toda imagem com url será válida. Indico as do site https://imgur.com/</p>
+				</Modal>
+			)}
 		</>
 	);
 }

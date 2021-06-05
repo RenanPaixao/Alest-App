@@ -3,10 +3,11 @@ import styled from 'styled-components';
 const WrapperCards = styled.div`
 	max-width: 60%;
 	justify-content: center;
+	min-height: 82vh;
 
 	display: flex;
 	flex-wrap: wrap;
-	margin: 2rem auto;
+	margin: 1rem auto 2rem;
 
 	background-color: var(--white);
 	border-radius: 8px;

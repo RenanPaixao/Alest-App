@@ -23,7 +23,7 @@ function Search({ cards, setCards, list }) {
 					let newCards;
 
 					newCards = cards.filter((card) => {
-						if (card.title.toLowerCase() === value.toLowerCase()) {
+						if (card.title.toLowerCase().includes(value.toLowerCase())) {
 							return card;
 						}
 					});
@@ -32,6 +32,7 @@ function Search({ cards, setCards, list }) {
 						setCards(newCards);
 					} else {
 						alert('produto não encontrado!');
+						list();
 					}
 				}}
 			></input>

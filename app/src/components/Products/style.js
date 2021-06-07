@@ -7,7 +7,7 @@ const WrapperCards = styled.div`
 
 	display: flex;
 	flex-wrap: wrap;
-	margin: 1rem auto 2rem;
+	margin: 0 auto 2rem;
 
 	background-color: var(--white);
 	border-radius: 8px;

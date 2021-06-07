@@ -3,6 +3,7 @@ import WrapperCards from './style';
 import Card from '../Card/index.js';
 import axios from 'axios';
 import Search from '../Search';
+import AddButton from '../AddButton';
 
 function Products() {
 	const [cards, setCards] = useState([]);
@@ -20,6 +21,7 @@ function Products() {
 	return (
 		<>
 			<Search cards={cards} setCards={setCards} list={list} />
+			<AddButton />
 			<WrapperCards>
 				{cards === false || cards.length === 0 ? (
 					<h1>Não temos produtos</h1>

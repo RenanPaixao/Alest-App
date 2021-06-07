@@ -28,10 +28,16 @@ function Modal(props) {
 								(a, [k, v]) => (v ? ((a[k] = v), a) : a),
 								{}
 							);
-							const copy = Object.assign({}, props.propState);
+							const copy = Object.assign({}, props.state);
 							const result = Object.assign(copy, arr);
 
-							axios.post(`http://localhost:404/products/update/${props.propState.id}`, {
+							axios.post(`http://localhost:404/products/update/${props.state.id}`, {
+								title: result.title,
+								price: result.price,
+								image: result.image,
+							});
+							props.setState({
+								id: props.state.id,
 								title: result.title,
 								price: result.price,
 								image: result.image,

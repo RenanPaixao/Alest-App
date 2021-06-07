@@ -12,12 +12,12 @@ function Card(props) {
 	return (
 		<>
 			<CardStyle id={props.id}>
-				<img src={props.image} alt={`Imagem sobre ${props.title}`} />
+				<img src={state.image} alt={`Imagem sobre ${state.title}`} />
 				<div>
-					<p>{props.title}</p>
+					<p>{state.title}</p>
 
 					<p>
-						<span>R$ {props.price}</span>
+						<span>R$ {state.price}</span>
 					</p>
 				</div>
 				<footer>
@@ -29,7 +29,7 @@ function Card(props) {
 							document.getElementById(`${state.id}`).style.display = 'none';
 
 							// put the port that you using here
-							await axios.delete(`http://localhost:404/delete/${state.id}`, {
+							await axios.delete(`http://localhost:404/delete/${props.id}`, {
 								title: state.title,
 								price: state.price,
 								imagem: state.price,
@@ -46,8 +46,8 @@ function Card(props) {
 				<Modal
 					isOpen={Boolean(openModal)}
 					closeModal={() => setOpenModal(null)}
-					propState={state}
-					propSetState={(value) => setState(value)}
+					state={state}
+					setState={setState}
 				>
 					<h1>Atualizar</h1>
 					<label htmlFor="inputTitle">Título</label>

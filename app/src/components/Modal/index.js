@@ -23,7 +23,7 @@ function Modal(props) {
 				<InlineDiv>
 					<button
 						onClick={() => {
-							const id = new Date().getTime();
+							const id = new Date().getTime().toString();
 							const title = document.getElementById('inputTitle').value.trim();
 							const price = document.getElementById('inputPrice').value.trim();
 							const image = document.getElementById('inputImage').value.trim();

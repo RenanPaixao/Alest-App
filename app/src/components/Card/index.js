@@ -29,7 +29,7 @@ function Card(props) {
 							document.getElementById(`${state.id}`).style.display = 'none';
 
 							// put the port that you using here
-							await axios.delete(`http://localhost:404/delete/${props.id}`, {
+							await axios.delete(`http://localhost:404/delete/${state.id}`, {
 								title: state.title,
 								price: state.price,
 								imagem: state.price,

@@ -16,10 +16,10 @@ export async function productsList() {
 	}
 }
 
-export async function addProduct(title, price, image) {
+export async function addProduct(id, title, price, image) {
 	try {
 		let send = { title: title, price: price, image: image };
-		await ref.add(send);
+		await ref.doc(id).set(send);
 	} catch (err) {
 		console.log(err);
 	}

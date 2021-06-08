@@ -13,7 +13,7 @@ productsRoutes.post('/add', (req, res) => {
 		return res.status(400).end();
 	}
 
-	addProduct(body.id.title, body.id.price, body.id.image);
+	addProduct(body.id, body.title, body.price, body.image);
 
 	res.send('Success');
 });

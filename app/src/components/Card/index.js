@@ -48,16 +48,7 @@ function Card(props) {
 					closeModal={() => setOpenModal(null)}
 					state={state}
 					setState={setState}
-				>
-					<h1>Atualizar</h1>
-					<label htmlFor="inputTitle">Título</label>
-					<input id="inputTitle" type="text" name="inputTitle" placeholder="Título"></input>
-					<label htmlFor="inputPrice">Preço</label>
-					<input id="inputPrice" type="number" name="inputPrice" placeholder="Preço"></input>
-					<label htmlFor="inputImage">Url da Imagem</label>
-					<input id="inputImage" type="text" name="inputImage" placeholder="Url da Imagem"></input>
-					<p>**Nem toda imagem com url será válida. Indico as do site https://imgur.com/</p>
-				</Modal>
+				></Modal>
 			)}
 		</>
 	);

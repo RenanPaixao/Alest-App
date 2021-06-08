@@ -21,7 +21,7 @@ function Products() {
 	return (
 		<>
 			<Search cards={cards} setCards={setCards} list={list} />
-			<AddButton />
+			<AddButton list={list} cards={cards} setCards={setCards} />
 			<WrapperCards>
 				{cards === false || cards.length === 0 ? (
 					<h1>Não temos produtos</h1>

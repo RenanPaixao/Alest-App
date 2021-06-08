@@ -19,6 +19,7 @@ function Modal(props) {
 				<label htmlFor="inputImage">Url da Imagem</label>
 				<input id="inputImage" type="text" name="inputImage" placeholder="Url da Imagem"></input>
 				<p>**Nem toda imagem com url será válida. Indico as do site https://imgur.com/</p>
+
 				<InlineDiv>
 					<button
 						onClick={() => {
@@ -27,7 +28,32 @@ function Modal(props) {
 							const image = document.getElementById('inputImage').value.trim();
 
 							if (title === '' && price === '' && image === '') {
-								alert('Você precisa preencher ao menos um valor');
+								props.isAdd
+									? alert('Preencha todos os valores')
+									: alert('Você precisa preencher ao menos um valor');
+								return;
+							}
+
+							if (props.isAdd) {
+								axios.post('http://localhost:404/add', {
+									id: {
+										title: title,
+										price: price,
+										image: image,
+									},
+								});
+
+								props.setCards([
+									...props.cards,
+									{
+										id: new Date().getTime(),
+										title: title,
+										price: price,
+										image: image,
+									},
+								]);
+
+								props.closeModal();
 								return;
 							}
 

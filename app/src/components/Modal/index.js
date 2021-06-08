@@ -23,6 +23,7 @@ function Modal(props) {
 				<InlineDiv>
 					<button
 						onClick={() => {
+							const id = new Date().getTime();
 							const title = document.getElementById('inputTitle').value.trim();
 							const price = document.getElementById('inputPrice').value.trim();
 							const image = document.getElementById('inputImage').value.trim();
@@ -36,17 +37,16 @@ function Modal(props) {
 
 							if (props.isAdd) {
 								axios.post('http://localhost:404/add', {
-									id: {
-										title: title,
-										price: price,
-										image: image,
-									},
+									id: id,
+									title: title,
+									price: price,
+									image: image,
 								});
 
 								props.setCards([
 									...props.cards,
 									{
-										id: new Date().getTime(),
+										id: id,
 										title: title,
 										price: price,
 										image: image,

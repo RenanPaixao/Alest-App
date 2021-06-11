@@ -1,55 +1,20 @@
 import styled from 'styled-components';
 
-export const Card = styled.div`
-	width: 12rem;
-	height: 18rem;
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	margin: 2rem 1rem 1rem;
-
-	background-color: var(--gray);
-	border-radius: 5px;
-
-	input {
-		background-color: #000;
-		width: 5rem;
-	}
-	img {
-		width: 70%;
-		height: 40%;
-	}
-	div {
-		width: 100%;
-		font-size: 13px;
-
-		display: flex;
-		justify-content: space-around;
-		margin-top: 3rem;
-	}
-	:hover {
-		transform: scale(1.1);
-		cursor: pointer;
-		background-color: var(--gray-hover);
-	}
-	@media (max-width: 675px) {
-		width: 11rem;
-		height: 17rem;
-
-		margin: 1rem;
-	}
-`;
-export const WrapperCards = styled.div`
+const WrapperCards = styled.div`
 	max-width: 60%;
 	justify-content: center;
+	min-height: 82vh;
 
 	display: flex;
 	flex-wrap: wrap;
-	margin: 2rem auto;
+	margin: 0 auto 2rem;
 
 	background-color: var(--white);
+	border-radius: 8px;
+
+	h1 {
+		margin: 40vh auto;
+	}
 
 	@media (max-width: 1000px) {
 		max-width: 90%;
@@ -61,3 +26,4 @@ export const WrapperCards = styled.div`
 		max-width: 100%;
 	}
 `;
+export default WrapperCards;

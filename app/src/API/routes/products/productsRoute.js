@@ -1,11 +1,5 @@
 import express from 'express';
-import {
-	productsList,
-	addProduct,
-	productSearch,
-	productUpdate,
-	productDelete,
-} from '../../services/products/productsServices.js';
+import { productsList, addProduct, productUpdate, productDelete } from '../../services/products/productsServices.js';
 
 const productsRoutes = express.Router();
 
@@ -19,13 +13,9 @@ productsRoutes.post('/add', (req, res) => {
 		return res.status(400).end();
 	}
 
-	addProduct(body.id.title, body.id.price, body.id.urlImage);
+	addProduct(body.id, body.title, body.price, body.image);
 
 	res.send('Success');
-});
-
-productsRoutes.get('/products/:id', async (req, res) => {
-	res.send(await productSearch(req.params.id));
 });
 
 productsRoutes.post('/products/update/:id', async (req, res) => {
@@ -33,7 +23,7 @@ productsRoutes.post('/products/update/:id', async (req, res) => {
 
 	try {
 		if (req.body) {
-			const verify = await productUpdate(req.params.id, body?.id.title, body.id.price, body.id.image);
+			const verify = await productUpdate(req.params.id, body?.title, body?.price, body?.image);
 			if (verify === true) {
 				return res.status(200).send('Sucess');
 			} else {

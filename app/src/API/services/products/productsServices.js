@@ -10,39 +10,18 @@ export async function productsList() {
 	} else {
 		const products = [];
 		snapshot.docs.forEach((snap) => {
-			products.push(snap.data());
+			products.push(Object.assign({ id: snap.id }, snap.data()));
 		});
 		return products;
 	}
 }
 
-export async function addProduct(title, price, urlImage) {
+export async function addProduct(id, title, price, image) {
 	try {
-		let send = { title: title, price: price, urlImage: urlImage };
-		await ref.add(send);
+		let send = { title: title, price: price, image: image };
+		await ref.doc(id).set(send);
 	} catch (err) {
 		console.log(err);
-	}
-}
-
-export async function productSearch(title) {
-	const snapshot = await ref.get();
-	if (snapshot.empty === true) {
-		return false;
-	} else {
-		const products = [];
-		snapshot.docs.forEach((snap) => {
-			const verify = snap.data();
-
-			if (verify.title.includes(title)) {
-				products.push(snap.data());
-			}
-		});
-		if (products.length) {
-			return products;
-		} else {
-			return 'produto não encontrado';
-		}
 	}
 }
 

@@ -5,13 +5,19 @@ const GlobalStyles = createGlobalStyle`
         --gray: #EEEEEE;
         --white: #FFFFFF;
         --gray-hover: #ced4da;
-
+		--purple: rgb(142,45,226);
+		--gradient: linear-gradient(130deg, rgba(142,45,226,1) 5%, rgba(74,0,224,1) 100%) fixed;
     }
     *{
         font-family: 'Poppins', sans-serif;
         box-sizing: border-box;
     }
-    
+	body{
+		width: 100%;
+		height: 100%;
+		background: var(--purple);
+		background: var(--gradient);
+	}
 html,
 body,
 div,
@@ -135,10 +141,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* html{
-    width: 100vw;
-    height: 100vw;
-} */
 `;
 
 export default GlobalStyles;

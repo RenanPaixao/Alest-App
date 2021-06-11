@@ -39,7 +39,10 @@ As tecnologias sugeridas foram <strong>NodeJS</strong> ou <strong>Typescript</st
 
 <h2>INSTALAÇÃO</h2>
 Ao iniciar, deve-se entrar na pasta app do projeto com seu console de preferência e com o <strong>yarn</strong> instalado para usar o comando <strong>yarn install</strong> e instalar as dependências.
-Após isso, criar um arquivo com o nome de <strong>".env"</strong> e dentro dele, seguir o modelo do arquivo <strong>".envSample"</strong>, usando suas configs do seu projeto <strong>Firebase</strong>. Após isso, criar um arquivo de texto com sua autorização de uso, gerada no site do <strong>Firebase</strong>, para usar no arquivo DB.js <strong>(app/src/API/Data/DB.js)</strong> na parte de <strong>credentials</strong>, onde no meu caso tinha o nome de auth.
+
+Após isso, criar um arquivo com o nome de <strong>".env"</strong> e dentro dele, seguir o modelo do arquivo <strong>".envSample"</strong>, usando suas configs do seu projeto <strong>Firebase</strong>. 
+
+Agora, crie um arquivo de texto com sua autorização de uso, gerada no site do <strong>Firebase</strong>, para usar no arquivo DB.js <strong>(app/src/API/Data/DB.js)</strong> na parte de <strong>credentials</strong>, onde no meu caso tinha o nome de auth.
 
 ---
 

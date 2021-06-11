@@ -1,29 +1,23 @@
-# Desafio Alest 🔥
+#ENFIM, O FIM!
 
-## Descrição 📝
+A duas semanas mais ou menos, participei de um teste para um estágio na empresa Alest. Não tinha ido a fundo em **Backend** e não consegui chegar perto de conseguir finalizar(existe outro markdown aqui resumindo como foi). Após o fim do tempo para entrega do desafio, continuei tentando e consegui terminar.
 
-##### Desafio proposto ao decorrer de uma seleção para estágio em React JS
+##DESAFIO
+Construir uma aplicação que permita visualizar, adicionar, remover e atualizar produtos (CRUD) em **React** ou **Angular**, através de uma API HTTP criada por mim, onde os dados fossem gravados no **Cloud Firestore**. O tempo era de **72hrs**. 
 
-O objetivo seria criar uma aplicação CRUD. As tecnologias recomendadas foram **Node JS** para a criação de uma APi e **Cloud Firestore** como banco de dados.
+As tecnologias sugeridas foram **NodeJS** ou **Typescript** utilizando o framework **Express**.
 
----
+##TECNOLOGIAS PRESENTES
 
----
+**-Node.js**
+**-Cloud Firestore | Firebase**
+**-React.js**
 
-### Final (Mas já?) 😕
+##NECESSÁRIO
 
----
+**-Yarn**
+**-Projeto Web no Firebase**
 
-**O que aconteceu?**
-
-Esse foi meu primeiro contato com backend. Fiz uma estrutura básica de cards com o **React** no início do primeiro dia, e até aí tudo bem.
-
-Após isso, foram várias horas tentando entender o que é uma **API** e como fazer uma. Tentei de várias formas conseguir um **_dadozinho_** que fosse do firestore. Era tanta sede de conseguir alguma coisa que estudei até **Cloud functions**, pra no fim descobrir que precisaria do plano pago. 😢
-
-Comecei um curso de **node.js**, cansei de olhar para a face daquele homem dos primeiros passos da **firebase**, mas o pior de tudo foi a **_GAFE_** de abrir um servidor local pra testar coisas com o node, colocar um `console.log(localhost/:3000/)` pra testar a rota padrão assim que o servidor rodasse e não precisar digitar no navegador, só clickar no terminal, quando na verdade deveria ser `console.log(localhost:3000/)`. Foram 2 horas pra entender o porquê de não estar funcionando, e era uma maldita barra.
-
-Enfim. Foi uma experiência muito esclarecedora e satisfatória ao mesmo tempo. Me faz querer aprender mais, e com certeza eu vou.
-
----
-
-###### Será que é o fim mesmo? Provavelmente vou tentar fazer de novo 😁<br>Até mais pra todos que leram até o final 👋
+##INSTALAÇÃO
+Ao iniciar, deve-se entrar na pasta app do projeto com seu console de preferência e com o **yarn** instalado para usar o comando **yarn install** e instalar as dependências.
+Após isso, criar um arquivo com o nome de **".env"** e dentro dele, seguir o modelo do arquivo **".envSample"**, usando suas configs do seu projeto **Firebase**. Após isso, criar um arquivo de texto com sua autorização de uso, gerada no site do **Firebase**, para usar no arquivo DB.js **(app/src/API/Data/DB.js)** na parte de **credentials**, onde no meu caso tinha o nome de auth.
